@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import "../../Components/Sidebar/Sidebar.css"
 
-function Search() {
+function Search(props) {
 
 
 
@@ -23,6 +23,8 @@ function Search() {
     useEffect(() => {
         bigApi()
     }, [])
+
+    //! API CALLS TO GET PLAYERS
 
     function baplayerGet() {
         fetch(`/basketball/getplayers`)
@@ -139,11 +141,12 @@ function Search() {
         hteamGet()
     }
 
+    
     function handleChange(event) {
         setterms(baplayers.concat(bsplayers, fplayers, hplayers, bateams, bsteams, fteams, hteams))
         createDropdown(event.target.value)
     }
-
+    
     function createDropdown(stro) {
         let jsx = []
         let len = stro.length
