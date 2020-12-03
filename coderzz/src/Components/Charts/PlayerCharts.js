@@ -15,8 +15,7 @@ function PlayerCharts(props) {
     let playerstat4 = []
 
     let xAxesLabel = []
-    console.log(props.SeasonStats[0])
-    switch (props.SeasonStats[0].sportname) {
+    switch (props.player1[0].sportname) {
         case "basketball":
             if (props.title == "offensive") {
                 chartTitle = "Offensive Stats"
@@ -24,14 +23,14 @@ function PlayerCharts(props) {
                 statname2 = "Assists"
                 statname3 = "Offensive-Rebounds"
                 statname4 = "Three Point Attempts"
-                for (let i = 0; i < props.SeasonStats.length; i++) {
-                    if (props.SeasonStats[i].index === "Career")
+                for (let i = 0; i < props.player1.length; i++) {
+                    if (props.player1[i].index === "Career")
                         break;
-                    playerstat1[i] = props.SeasonStats[i].points
-                    playerstat2[i] = props.SeasonStats[i].assists
-                    playerstat3[i] = props.SeasonStats[i].offensive_rebounds
-                    playerstat4[i] = props.SeasonStats[i].three_point_attempts
-                    xAxesLabel[i] = props.SeasonStats[i].index
+                    playerstat1[i] = props.player1[i].points
+                    playerstat2[i] = props.player1[i].assists
+                    playerstat3[i] = props.player1[i].offensive_rebounds
+                    playerstat4[i] = props.player1[i].three_point_attempts
+                    xAxesLabel[i] = props.player1[i].index
                 }
                 xAxesLabel.sort()
                 break
@@ -40,13 +39,13 @@ function PlayerCharts(props) {
                 chartTitle = "Defensive Stats"
                 statname1 = "Defensive-Rebounds"
                 statname2 = "Blocks"
-                for (let i = 0; i < props.SeasonStats.length; i++) {
-                    if (props.SeasonStats[i].index === "Career")
+                for (let i = 0; i < props.player1.length; i++) {
+                    if (props.player1[i].index === "Career")
                         break;
-                    playerstat1[i] = props.SeasonStats[i].defensive_rebounds
-                    playerstat2[i] = props.SeasonStats[i].blocks
+                    playerstat1[i] = props.player1[i].defensive_rebounds
+                    playerstat2[i] = props.player1[i].blocks
 
-                    xAxesLabel[i] = props.SeasonStats[i].index
+                    xAxesLabel[i] = props.player1[i].index
                 }
                 xAxesLabel.sort()
                 break
@@ -62,19 +61,20 @@ function PlayerCharts(props) {
             statname2 = "On-Base Percentage"
             statname3 = "Slugging Percentage"
             statname4 = "Fielding Percentage"
-            for (let i = 0; i < props.SeasonStats.length; i++) {
-                if (props.SeasonStats[i].index === "Career")
+            for (let i = 0; i < props.player1.length; i++) {
+                if (props.player1[i].index === "Career")
                     break;
-                playerstat1[i] = props.SeasonStats[i].batting_average
-                playerstat2[i] = props.SeasonStats[i].on_base_percentage
-                playerstat3[i] = props.SeasonStats[i].slugging_percentage
-                playerstat4[i] = props.SeasonStats[i].fielding_percentage
+                playerstat1[i] = props.player1[i].batting_average
+                playerstat2[i] = props.player1[i].on_base_percentage
+                playerstat3[i] = props.player1[i].slugging_percentage
+                playerstat4[i] = props.player1[i].fielding_percentage
 
 
-                xAxesLabel[i] = props.SeasonStats[i].index
+                xAxesLabel[i] = props.player1[i].index
             }
             break
         case "football":
+            //!MASSIVE CASE STATEMENT FOR
             if (props.title == "offensive") {
                 chartTitle = "Offensive Stats"
             }
@@ -85,16 +85,16 @@ function PlayerCharts(props) {
             statname2 = "Assists"
             statname3 = "Rebounds"
             statname4 = "Blocks"
-            for (let i = 0; i < props.SeasonStats.length; i++) {
-                if (props.SeasonStats[i].index === "Career")
+            for (let i = 0; i < props.player1.length; i++) {
+                if (props.player1[i].index === "Career")
                     break;
-                playerstat1[i] = props.SeasonStats[i].assists
-                playerstat2[i] = props.SeasonStats[i].points
-                playerstat3[i] = props.SeasonStats[i].total_rebounds
-                playerstat4[i] = props.SeasonStats[i].blocks
+                playerstat1[i] = props.player1[i].assists
+                playerstat2[i] = props.player1[i].points
+                playerstat3[i] = props.player1[i].total_rebounds
+                playerstat4[i] = props.player1[i].blocks
 
 
-                xAxesLabel[i] = props.SeasonStats[i].index
+                xAxesLabel[i] = props.player1[i].index
             }
             break
         case "hockey":
@@ -108,16 +108,16 @@ function PlayerCharts(props) {
             statname2 = "Assists"
             statname3 = "Rebounds"
             statname4 = "Blocks"
-            for (let i = 0; i < props.SeasonStats.length; i++) {
-                if (props.SeasonStats[i].index === "Career")
+            for (let i = 0; i < props.player1.length; i++) {
+                if (props.player1[i].index === "Career")
                     break;
-                playerstat1[i] = props.SeasonStats[i].assists
-                playerstat2[i] = props.SeasonStats[i].points
-                playerstat3[i] = props.SeasonStats[i].total_rebounds
-                playerstat4[i] = props.SeasonStats[i].blocks
+                playerstat1[i] = props.player1[i].assists
+                playerstat2[i] = props.player1[i].points
+                playerstat3[i] = props.player1[i].total_rebounds
+                playerstat4[i] = props.player1[i].blocks
 
 
-                xAxesLabel[i] = props.SeasonStats[i].index
+                xAxesLabel[i] = props.player1[i].index
             }
             break
     }
